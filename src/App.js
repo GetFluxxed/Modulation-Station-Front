@@ -1,11 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import List from "./components/List";
+import Home from "./components/Home";
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='/list'
+            element={<List />}
+          />
+        </Routes>
+      </div>
+
+    </Router>
   );
 }
 
-export default App;
